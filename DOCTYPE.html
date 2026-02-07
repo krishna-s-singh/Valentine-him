@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Sujeet 💖</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ff4d6d, #ffb3c1);
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 25px;
+      border-radius: 22px;
+      max-width: 520px;
+      margin: auto;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      backdrop-filter: blur(6px);
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 11px 24px;
+      border: none;
+      border-radius: 25px;
+      margin: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      background: #ff1e50;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      background: #ff0033;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="step1">
+  <h1>💌 Valentine Letter for Pati Ji 💌</h1>
+  <p>Dear Patiji, this is from your Baby Wife ❤️</p>
+  <p>Ready for the love journey? 🎬💖</p>
+  <button onclick="nextStep(1)">Start Our Love Story 💕</button>
+</div>
+
+<div class="card hidden" id="step2">
+  <div class="question">🌸 Question 1</div>
+  <p>When did you first feel that I'm special for you? 🥺❤️</p>
+  <button onclick="nextStep(2)">Next ➡️</button>
+</div>
+
+<div class="card hidden" id="step3">
+  <div class="question">💑 Question 2</div>
+  <p>What is your favourite memory of us together? ✨</p>
+  <button onclick="nextStep(3)">Next ➡️</button>
+</div>
+
+<div class="card hidden" id="step4">
+  <div class="question">💖 Question 3</div>
+  <p>Do you feel that choosing me has been one of the right and meaningful decisions in your life?</p>
+  <button onclick="nextStep(4)">Next ➡️</button>
+</div>
+
+<div class="card hidden" id="step5">
+  <div class="question">💍 Question 4</div>
+  <p>If you had to choose me again today, knowing everything about me and our life, would you still choose me? 💕 🥹❤️</p>
+  <button onclick="nextStep(5)">Next ➡️</button>
+</div>
+
+<div class="card hidden" id="step6">
+  <div class="question">💌 Final Question</div>
+  <p>Will you be my Valentine? 💕</p>
+  <button onclick="nextStep(6)">Finish 💖</button>
+</div>
+
+<div class="card hidden" id="final">
+  <h1>🎉 Thank You Pati Ji 🎉</h1>
+  <p>You just completed the Valentine Journey 💖</p>
+  <h2>Pati Ji, you are my favourite person, my home, and my forever ❤️</h2>
+  <h3>Happy Valentine’s Day 💌</h3>
+  <h3>— Your Krishu & Sweetheart 💕</h3>
+  <br>
+  <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSd5fP3PS36ayGZ4FxnbM77ksmuklKMy2diRmZs0A-c4ziIsGg/viewform?usp=publish-editor', '_blank')">
+    Pour Your Heart Out for Krishu ❤️
+  </button>
+</div>
+
+<script>
+  function nextStep(step) {
+    document.getElementById("step" + step).classList.add("hidden");
+    if(step === 6){
+      document.getElementById("final").classList.remove("hidden");
+    } else {
+      document.getElementById("step" + (step + 1)).classList.remove("hidden");
+    }
+  }
+
+  // Falling hearts animation 💕
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }, 300);
+</script>
+
+</body>
+</html>
